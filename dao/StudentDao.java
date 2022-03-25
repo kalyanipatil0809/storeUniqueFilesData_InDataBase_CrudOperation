@@ -9,6 +9,7 @@ import java.util.HashSet;
 import in.sts.excelutility.model.MarksModel;
 import in.sts.excelutility.model.StudentModel;
 import in.sts.excelutility.mysqlconnection.DBConnection;
+import java.lang.AutoCloseable;
 
 public class StudentDao {
 	final int FIRST_NAME = 1;
@@ -41,7 +42,7 @@ public class StudentDao {
 				}
 			}
 			System.out.println("Data uploaded in database");
-			connection.close();
+			
 
 		} catch (SQLException exception) {
 			exception.printStackTrace();
@@ -92,7 +93,7 @@ public class StudentDao {
 		try (Connection connection = DBConnection.connect()) {
 		
 			String fetchQuery=null;
-			if(subjectName.toLowerCase().equals("maths"))
+			if(subjectName.equalsIgnoreCase("maths"))
 			{
 				fetchQuery = "select firstName,branch,maths from studentdetails where maths in (select max(maths) from studentdetails)";
 			}
