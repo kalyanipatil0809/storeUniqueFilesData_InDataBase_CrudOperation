@@ -90,7 +90,7 @@ public class StudentDao {
 	public void getHighestMarksInSubject(String subjectName) {
 
 		try (Connection connection = DBConnection.connect()) {
-			//			String fetchQuery = "select *, max(?) from studentdetails";
+		
 			String fetchQuery=null;
 			if(subjectName.toLowerCase().equals("maths"))
 			{
