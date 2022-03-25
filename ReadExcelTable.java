@@ -68,37 +68,31 @@ public class ReadExcelTable {
 							studentModel.setFirstName(firstName);
 							count++;
 							break;
-
 						case 2:
 							middleName = dataFormatter.formatCellValue(cell);
 							studentModel.setMiddleName(middleName);
 							count++;
 							break;
-
 						case 3:
 							lastName = dataFormatter.formatCellValue(cell);
 							studentModel.setLastName(lastName);
 							count++;
 							break;
-
 						case 4:
 							branch = dataFormatter.formatCellValue(cell);
 							studentModel.setBranch(branch);
 							count++;
 							break;
-
 						case 5:
 							mathsMarks = dataFormatter.formatCellValue(cell);
 							marksModel.setMaths(Integer.parseInt(mathsMarks));
 							count++;
 							break;
-
 						case 6:
 							englishMarks = dataFormatter.formatCellValue(cell);
 							marksModel.setEnglish(Integer.parseInt(englishMarks));
 							count++;
 							break;
-
 						case 7:
 							scienceMarks = dataFormatter.formatCellValue(cell);
 							marksModel.setScience(Integer.parseInt(scienceMarks));
@@ -107,18 +101,14 @@ public class ReadExcelTable {
 						}
 					}
 					studentModel.setMarksModel(marksModel);
-
 					arrayList.add(studentModel);
-
 				}
-
 			}
 			uniqueSet = new HashSet<StudentModel>(arrayList);
 			for (StudentModel studentList : uniqueSet) {
 				System.out.println(studentList);
 			}
 			workBook.close();
-			
 		} catch (FileNotFoundException exception) {
 			System.out.println("Please enter the correct file name..!");
 
